@@ -2,14 +2,14 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-replicaCount: 2
+replicaCount: 1
 createRoute: true
 
 image:
-  repository: nginx
-  pullPolicy: IfNotPresent
+  repository: 'quay.io/mlacourse/ado-spring-demo'
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: release-a0b822c3e99803f10020247c6ba3703aba19fe72
 
 imagePullSecrets: []
 nameOverride: ""
@@ -23,13 +23,6 @@ serviceAccount:
   # The name of the service account to use.
   # If not set and create is true, a name is generated using the fullname template
   name: ""
-
-# To Configure Spring Configuration via Configmap
-appConfig:
-  application:
-    version: v1.0
-  greeting:
-    prefix: NewPrefix
 
 podAnnotations: {}
 
@@ -65,24 +58,12 @@ ingress:
   #      - chart-example.local
 
 resources: 
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   limits:
     cpu: 300m
     memory: 600Mi
   requests:
     cpu: 100m
     memory: 128Mi
-
-#externalSecrets:
-#  clusterStore: azure-cluster-store
-#  secrets: 
-#  - secretName: foo
-#    secretKeys:
-#    - externalKey: secret1
-#      localKey: username
 
 autoscaling:
   enabled: false
@@ -96,3 +77,25 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+appConfig:
+  spring:
+    profiles:
+      active: none
+  shift:
+    rest: 
+      disableValidator: true
+  endpoints:
+    shutdown:
+      enabled: true
+    prometheus:
+      sensitive: false
+  springfox:
+    documentation:
+      swagger:
+        v2:
+          path: /swagger.json
+  application:
+    version: v1.0
+  greeting:
+    prefix: DevPrefixUpdated
