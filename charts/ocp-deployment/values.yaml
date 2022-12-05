@@ -98,4 +98,4 @@ appConfig:
   application:
     version: v1.0
   greeting:
-    prefix: DevPrefixUpdated
+    prefix: Tesing
