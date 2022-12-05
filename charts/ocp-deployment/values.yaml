@@ -29,7 +29,7 @@ appConfig:
   application:
     version: v1.0
   greeting:
-    prefix: Prefix
+    prefix: NewPrefix
 
 podAnnotations: {}
 
