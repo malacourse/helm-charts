@@ -78,7 +78,7 @@ tolerations: []
 
 affinity: {}
 
-appConfigX:
+appConfig:
   spring:
     profiles:
       active: none
