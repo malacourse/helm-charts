@@ -1,22 +1,23 @@
 ---
-appConfig:
-  spring:
-    profiles:
-      active: none
-  shift:
-    rest: 
-      disableValidator: true
-  endpoints:
-    shutdown:
-      enabled: true
-    prometheus:
-      sensitive: false
-  springfox:
-    documentation:
-      swagger:
-        v2:
-          path: /swagger.json
-  application:
-    version: v1.0
-  greeting:
-    prefix: Testing
+ocp-deployment:
+  appConfig:
+    spring:
+      profiles:
+        active: none
+    shift:
+      rest: 
+        disableValidator: true
+    endpoints:
+      shutdown:
+        enabled: true
+      prometheus:
+        sensitive: false
+    springfox:
+      documentation:
+        swagger:
+          v2:
+            path: /swagger.json
+    application:
+      version: v1.0
+    greeting:
+      prefix: TestingCharts
