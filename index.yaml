@@ -144,6 +144,20 @@ entries:
   spring-dev:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-12-07T16:06:26.847857745Z"
+    dependencies:
+    - name: ocp-deployment
+      repository: https://malacourse.github.io/helm-charts
+      version: 0.2.3
+    description: A Helm chart for Kubernetes
+    digest: 85f7ee8a5b0f14da6017e248450fa30c88dbfa8caa46b1494cd2cb4273b45158
+    name: spring-dev
+    type: application
+    urls:
+    - https://github.com/malacourse/helm-charts/releases/download/spring-dev-0.1.2/spring-dev-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-12-06T14:26:54.363395069Z"
     dependencies:
     - name: ocp-deployment
@@ -170,4 +184,4 @@ entries:
     urls:
     - https://github.com/malacourse/helm-charts/releases/download/spring-dev-0.1.0/spring-dev-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-06T14:26:54.363425569Z"
+generated: "2022-12-07T16:06:26.847904048Z"
