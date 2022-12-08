@@ -25,5 +25,6 @@ appVersion: "1.16.0"
 
 dependencies:
   - name: ocp-deployment
-    version: 0.2.3
-    repository: https://malacourse.github.io/helm-charts
+    version: 0.2.*
+    #repository: https://malacourse.github.io/helm-charts
+    repository: file://../ocp-deployment
