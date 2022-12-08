@@ -1,6 +1,0 @@
-dependencies:
-- name: ocp-deployment
-  repository: file://../ocp-deployment
-  version: 0.2.5
-digest: sha256:3ac2b2f2cd1fb7bf0120c622bead50bab728a0135051085db785aae87fe7a619
-generated: "2022-12-08T11:16:37.282470868-05:00"
