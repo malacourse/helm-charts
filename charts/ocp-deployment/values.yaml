@@ -5,6 +5,8 @@
 replicaCount: 1
 createRoute: true
 
+lastUpdated: "yesterday"
+
 image:
   repository: 'quay.io/mlacourse/ado-spring-demo'
   pullPolicy: Always
