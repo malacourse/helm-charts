@@ -20,4 +20,4 @@ ocp-deployment:
     application:
       version: v1.0
     greeting:
-      prefix: DEV_NEW
+      prefix: DEV_NEW_1

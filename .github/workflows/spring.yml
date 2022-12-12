@@ -30,19 +30,33 @@ jobs:
         with:
           version: v3.10.0
 
-      - name: Run chart-releaser
-        uses: helm/chart-releaser-action@98bccfd32b0f76149d188912ac8e45ddd3f8695f # pin@v1.4.0
-        env:
-          CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
-        #with: 
-        #  version: 0.1.4
+      #- name: Run chart-releaser
+      #  uses: helm/chart-releaser-action@98bccfd32b0f76149d188912ac8e45ddd3f8695f # pin@v1.4.0
+      #  env:
+      #    CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+      #  #with: 
+      #  #  version: 0.1.4
 
       - name: Login to GitHub Container Registry
         run: |
           helm registry login --username ${GITHUB_ACTOR} --password ${{ secrets.GITHUB_TOKEN }} ghcr.io
 
-      - name: Publish OCI Charts
+      - name: Update Helm Charts
+        env:
+          IMAGE_TAG: "0.1.5"
+          FILE_NAME: spring-dev-0.1.5.tgz
+        id: helm-template
         run: |
-          for chart in `find .cr-release-packages -name '*.tgz' -print`; do
-            helm push ${chart} oci://ghcr.io/${GITHUB_REPOSITORY}
-          done
+          echo "Publishing new chart"
+          helm dependency build ./charts/spring-dev/
+          helm package charts/spring-dev --version $IMAGE_TAG --app-version $IMAGE_TAG
+          ls -lrt
+          echo "REP: --username ${GITHUB_ACTOR} --password ${{ secrets.GITHUB_TOKEN }} ghcr.io"
+          helm registry login --username ${GITHUB_ACTOR} --password ${{ secrets.GITHUB_TOKEN }} ghcr.io
+          helm push $FILE_NAME oci://ghcr.io/malacourse/helm-charts
+
+      #- name: Publish OCI Charts
+      #  run: |
+      #    for chart in `find .cr-release-packages -name '*.tgz' -print`; do
+      #      helm push ${chart} oci://ghcr.io/${GITHUB_REPOSITORY}
+      #    done
