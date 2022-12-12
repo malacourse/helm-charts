@@ -5,13 +5,12 @@
 replicaCount: 1
 createRoute: true
 
-lastUpdated: "yesterday"
+lastUpdated: "never"
 
 image:
   repository: 'quay.io/mlacourse/ado-spring-demo'
   pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  #tag: release-a0b822c3e99803f10020247c6ba3703aba19fe72
 
 imagePullSecrets: []
 nameOverride: ""
