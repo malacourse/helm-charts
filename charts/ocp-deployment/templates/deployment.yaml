@@ -17,6 +17,7 @@ spec:
 {{- if .Values.appConfig }}
         configmap-checksum: {{ include (print $.Template.BasePath "/app-config.yaml") . | sha256sum }}
 {{- end }}
+        app.last-updated: "{{ .Values.lastUpdated }}"
     {{- with .Values.podAnnotations }}
         {{- toYaml . | nindent 8 }}
     {{- end }}
