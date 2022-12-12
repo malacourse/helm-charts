@@ -43,8 +43,8 @@ jobs:
 
       - name: Update Helm Charts
         env:
-          IMAGE_TAG: "0.1.5"
-          FILE_NAME: spring-dev-0.1.5.tgz
+          IMAGE_TAG: "0.1.6"
+          FILE_NAME: spring-dev-0.1.6.tgz
         id: helm-template
         run: |
           echo "Publishing new chart"
