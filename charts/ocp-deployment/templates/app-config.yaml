@@ -9,6 +9,7 @@ metadata:
   name: {{ .Release.Name }}-configmap
   annotations:
     argocd.argoproj.io/compare-options: IgnoreExtraneous
+    argocd.argoproj.io/sync-options: Prune=false
   labels:
     {{- include "ocp-deployment.labels" . | nindent 4 }}
 {{- end }}
