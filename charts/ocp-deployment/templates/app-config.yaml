@@ -7,6 +7,8 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   name: {{ .Release.Name }}-configmap
+  annotations:
+    argocd.argoproj.io/compare-options: IgnoreExtraneous
   labels:
     {{- include "ocp-deployment.labels" . | nindent 4 }}
 {{- end }}
