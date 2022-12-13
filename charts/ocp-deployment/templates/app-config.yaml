@@ -7,8 +7,7 @@ kind: ConfigMap
 metadata:
   creationTimestamp: null
   annotations:
-    argocd.argoproj.io/sync-options: SelfHeal=false
-    argocd.argoproj.io/sync-options: Replace=false
+    argocd.argoproj.io/hook: Skip
   name: {{ .Release.Name }}-configmap
   labels:
     {{- include "ocp-deployment.labels" . | nindent 4 }}
