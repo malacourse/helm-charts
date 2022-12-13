@@ -3,6 +3,16 @@ entries:
   ocp-deployment:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-12-13T20:11:15.844939505Z"
+    description: A Helm chart for Kubernetes
+    digest: 6dbdfdc97987f1437e242489d01d0aca69c34f14361afe7ab1a8017109af6f3f
+    name: ocp-deployment
+    type: application
+    urls:
+    - https://github.com/malacourse/helm-charts/releases/download/ocp-deployment-0.2.12/ocp-deployment-0.2.12.tgz
+    version: 0.2.12
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-12-13T19:53:41.001585273Z"
     description: A Helm chart for Kubernetes
     digest: 3cc03c1b7fe3d82011d31a607c901e7c3e1ee018096f03005d1220a79b1037d2
@@ -266,4 +276,4 @@ entries:
     urls:
     - https://github.com/malacourse/helm-charts/releases/download/spring-dev-0.1.0/spring-dev-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-13T19:53:41.001753477Z"
+generated: "2022-12-13T20:11:15.845074402Z"
