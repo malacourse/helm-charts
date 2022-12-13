@@ -6,10 +6,10 @@ data:
 kind: ConfigMap
 metadata:
   creationTimestamp: null
-  name: {{ .Release.Name }}-configmap
   annotations:
-    argocd.argoproj.io/compare-options: IgnoreExtraneous
-    argocd.argoproj.io/sync-options: Prune=false
+    argocd.argoproj.io/sync-options: SelfHeal=false
+    argocd.argoproj.io/sync-options: Replace=false
+  name: {{ .Release.Name }}-configmap
   labels:
     {{- include "ocp-deployment.labels" . | nindent 4 }}
 {{- end }}
