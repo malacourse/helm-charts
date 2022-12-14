@@ -79,4 +79,5 @@ tolerations: []
 
 affinity: {}
 
-appConfig: {}
+appConfig: 
+  hello: world
